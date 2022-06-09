@@ -8,9 +8,11 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
+        "hisorange/browser-detect": "^4.5",
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.15",
-        "laravel/tinker": "^2.6"
+        "laravel/tinker": "^2.6",
+        "laravelcollective/html": "^6.3"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

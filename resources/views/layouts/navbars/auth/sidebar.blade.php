@@ -3,8 +3,7 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('dashboard') }}">
-        <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
-        <span class="ms-3 font-weight-bold">Soft UI Dashboard Laravel</span>
+        <img src="../assets/img/logo/nav-logo.webp" class="navbar-brand-img h-100" alt="...">
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -60,6 +59,38 @@
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">User Management</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('site-information') ? 'active' : '') }}" href="{{ url('site-information') }}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('site-information') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">Site information</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('home-page') ? 'active' : '') }}" href="{{ url('home-page') }}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('home-page') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">Home Page</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('post-page') ? 'active' : '') }}" href="{{ url('post-page') }}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('post-page') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">My Posts</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('all-post') ? 'active' : '') }}" href="{{ url('all-post') }}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('all-post') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">All Posts</span>
         </a>
       </li>
       <li class="nav-item mt-2">

@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -9,6 +12,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use hisorange\BrowserDetect\Stages\BrowserDetect;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +48,39 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('user-management', function () {
 		return view('laravel-examples/user-management');
 	})->name('user-management');
+
+    //site information routes
+
+	Route::get('site-information', function () {
+		return view('pages/site-information');
+	})->name('site-information');
+
+
+
+    //home page routes
+
+	Route::get('home-page', [HomePageController::class, 'index'])->name('home-page');
+
+    Route::post('addBanner', [HomePageController::class, 'addBanner'])->name('add.banner');
+    Route::post('modifyHomeImages', [HomePageController::class, 'modifyHomeImages'])->name('modify.home.images');
+
+
+
+    //post page Routes
+
+    Route::get('post-page', [BlogController::class, 'postPage'])->name('post.page');
+
+    //all post routes
+
+    Route::get('all-post', [BlogController::class, 'index'])->name('all.post');
+    Route::post('createBlog', [BlogController::class, 'createBlog'])->name('create.blog');
+
+    //all comment Routes
+    Route::post('createComment', [CommentController::class, 'createComment'])->name('create.comment');
+
+
+
+
 
 	Route::get('tables', function () {
 		return view('tables');
